@@ -3,12 +3,8 @@ const validLength = inputOfFormEl.getAttribute("data-length");
 
 inputOfFormEl.addEventListener("blur", validArea);
 
-function validArea() {
-  if (inputOfFormEl.value.length === Number(validLength)) {
-    inputOfFormEl.classList.remove("invalid");
-    inputOfFormEl.classList.add("valid");
-  } else {
-    inputOfFormEl.classList.remove("valid");
-    inputOfFormEl.classList.add("invalid");
-  }
+function validArea(event) {
+  event.currentTarget.value.length === Number(validLength)
+    ? (inputOfFormEl.classList = "valid")
+    : (inputOfFormEl.classList = "invalid");
 }
